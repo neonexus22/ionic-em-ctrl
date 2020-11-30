@@ -1,0 +1,10 @@
+{
+  "sensor_value": [
+    {
+      "sensor": 32,
+      "motor": 1
+    }
+  ],
+  "connect": [1],
+  "disconnect": [0]
+}

@@ -1,17 +1,64 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
+<!-- <ion-header [translucent]="true">
+  <ion-toolbar color="primary">
     <ion-title>
-      Tab 1
+      <ion-label>IoT</ion-label>
     </ion-title>
   </ion-toolbar>
-</ion-header>
+</ion-header> -->
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <div class="ion-container">
+    <img src="../../assets/mbg.jpeg" />
+    <div class="container" style="margin-top: 0">
+      <ion-grid>
+        <ion-row>
+          <ion-col class="ion-text-center">
+            <h1 class="title">Smart Tank</h1>
+            <hr />
+          </ion-col>
+        </ion-row>
+      </ion-grid>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+      <ion-grid style="margin-bottom: -20px">
+        <ion-row>
+          <ion-col class="ion-text-center">
+            <h3>Motor</h3>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+      <ion-grid>
+        <ion-row>
+          <ion-col class="ion-text-center">
+            <ion-button
+              [disabled]="!status"
+              (click)="stopDevice()"
+              color="danger"
+              >OFF</ion-button
+            >
+            <ion-button
+              [disabled]="status"
+              (click)="startDevice()"
+              color="primary"
+              >ON</ion-button
+            >
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+      <ion-grid>
+        <ion-row>
+          <ion-col class="ion-text-center">
+            <h3>Water Label</h3>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      <div class="progress-outer" *ngIf="waterLabelNum > 0">
+        <div class="progress-inner" [ngStyle]="{'width': waterLabel}">
+          {{waterLabel}}
+        </div>
+      </div>
+      <div class="ion-text-center" *ngIf="waterLabelNum <= 0">Its empty !</div>
+    </div>
+  </div>
 </ion-content>
